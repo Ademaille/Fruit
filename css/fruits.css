@@ -1,0 +1,39 @@
+body {
+    margin:0px;
+    padding:0px;
+}
+.FlexScreen {
+    display: flex;
+}
+
+.block50 {
+    flex-basis: 50%;
+}
+
+.imageChanger {
+    background-size: cover;
+    background-position: center;
+    background-image: url("../images/all-fruits.jpg");
+    
+}
+
+.boutonFruits {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lobster', cursive;
+    font-size:50px;
+    background-color: gray;
+    color:white;
+    height:25vh;
+}
+
+
+.boutonFruits:hover {
+    background-color: rgb(73, 73, 73);
+}
+
+.active,
+.active:hover {
+    background-color: red;
+}

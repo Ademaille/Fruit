@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="css/fruits.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="FlexScreen">
+        <div class="block50 imageChanger" id="imageFruit">
+        </div>
+        <!-- Mise en écriture des fruits en Html-->
+        <div class="block50" id="fruits">
+            <div class="boutonFruits" id="Pitaya" data-image="pitayas.jpg">Pitaya</div>
+            <div class="boutonFruits" id="Kiwi" data-image="kiwi.jpg">Kiwi</div>
+            <div class="boutonFruits" id="Carambole" data-image="carambole.jpg">Carambole</div>
+            <div class="boutonFruits" id="Peche" data-image="peche.jpg">Peche</div>
+            <div class="boutonFruits" id="Cerise" data-image="cerise.jpg">Cerise</div>
+        </div>
+    </div>
+
+    <script>
+// Mise en écriture des fruits en javascript
+        const fruits = [
+            { name: "Pitaya", image: "pitayas.jpg" },
+            { name: "Kiwi", image: "kiwi.jpg" },
+            { name: "Carambole", image: "carambole.jpg" },
+            { name: "Peche", image: "peche.jpg" },
+            { name: "Cerise", image: "cerise.jpg" }
+        ];
+
+        // Interactions du click 
+        const listButtons = document.querySelectorAll(".boutonFruits");
+        console.log(listButtons)
+
+        listButtons.forEach((button) => {
+
+            button.addEventListener("click", (event) => {
+
+                listButtons.forEach((button) => {
+                    button.classList.remove("active")
+                    event.target.classList.add("active")
+                })
+            }); 
+
+            // Interactions de la zone cliquable qui deviens rouge par l'active et
+            // des images correspondant aux fruits au survol
+
+            button.addEventListener("mouseover", (event) => {
+                const image = event.target.dataset.image;
+                const zoneImage = document.querySelector(".imageChanger");
+
+                zoneImage.style.backgroundImage = `url("../images/${image}")`;
+            });
+
+            // Interactions de verrouillage de l'image via le clic qui reste rouge
+
+            button.addEventListener("mouseleave", (event) => {
+                const blockImg = document.querySelector(".active")
+               
+
+            });
+                    
+        });
+
+        // const blockHtml = document.querySelector("body");
+
+        // const blockDiv1 = document.createElement("div");
+        // blockDiv1.classList.add("Flexscreen");
+
+        // const blockDiv2 = document.createElement("div");
+        // blockDiv2.classList.add("imageChanger");
+        // blockDiv2.id = ("imageFruit");
+
+        // const blockDiv3 = document.createElement("div");
+        // blockDiv3.classList.add("block50");
+        // blockDiv3.id = "fruits"
+
+        // const blockDiv4 = document.createElement("div");
+        // blockDiv4.classList.add("boutonFruits");
+        // blockDiv4.textContent = "Pitaya"
+
+        // const blockDiv5 = document.createElement("div");
+        // blockDiv5.classList.add("boutonFruits");
+        // blockDiv5.textContent = "Kiwi"
+
+        // const blockDiv6 = document.createElement("div");
+        // blockDiv6.classList.add("boutonFruits");
+        // blockDiv6.textContent = "Carambole"
+
+        // const blockDiv7 = document.createElement("div");
+        // blockDiv7.classList.add("boutonFruits");
+        // blockDiv7.textContent = "Peche"
+
+        // const blockDiv8 = document.createElement("div");
+        // blockDiv8.classList.add("boutonFruits");
+        // blockDiv8.textContent = "Cerise"
+
+        // blockDiv1.prepend(imageChanger, block50, boutonFruits)
+        // blockDiv3.prepend(boutonFruits)
+    </script>
+</body>
+
+</html>
